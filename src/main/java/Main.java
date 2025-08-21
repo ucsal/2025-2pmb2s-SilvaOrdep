@@ -9,6 +9,5 @@ public class Main {
 		o.add(new Item("Bolo", 12.5, 1)); // 12.5 -> subtotal 28.5
 		String receipt = new ReceiptService().generate(o);
 		System.out.println(receipt);
-		
 	}
 }
