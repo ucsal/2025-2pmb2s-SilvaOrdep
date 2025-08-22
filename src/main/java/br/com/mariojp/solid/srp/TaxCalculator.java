@@ -4,7 +4,7 @@ public class TaxCalculator implements ITaxCalculator {
 
 	@Override
 	public double calcTax(double subtotal) {
-		double tax = Double.parseDouble(System.getProperty("tax.rate"));
+		double tax = System.getProperty("tax.rate") != null ? Double.parseDouble(System.getProperty("tax.rate")) : 0.10;
 		
 		return tax*subtotal;
 	}

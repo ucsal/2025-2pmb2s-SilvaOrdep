@@ -6,10 +6,10 @@ public class ReceiptService {
 	public String generate(Order order) {
 		ITaxCalculator taxCalculator = new TaxCalculator();
 		ReceiptFormatter receiptFormatter = new ReceiptFormatter();
+		
 		double subtotal = getSubtotal(order);
 		double tax = taxCalculator.calcTax(subtotal);
 		double total = subtotal + tax;
-		StringBuilder sb = new StringBuilder(); 
 
 		return receiptFormatter.formatter(order, tax, subtotal, total);
 	}
